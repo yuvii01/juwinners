@@ -1,0 +1,135 @@
+/* Fullscreen background */
+.interest-selector {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #ffffff;  /* White background */
+  color: #000000;  /* Black text color */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: 'Inter', sans-serif;  /* Modern font similar to Hinge */
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6f486a;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Interest list taking full height and allowing scrolling */
+.interest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;  /* Take full width */
+  padding: 0 1rem;
+  overflow-y: auto;  /* Allow scrolling for the full page */
+  max-height: 80vh;  /* Limit max height so the list can scroll */
+}
+
+/* Style each interest item as a button */
+.interest-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 10px;  /* Rounded edges */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;  /* Prevent text selection */
+  border: 2px solid transparent;  /* For smooth transition of borders */
+  margin: 5px;
+}
+
+/* Hover effect for interest items */
+.interest-item:hover {
+  background-color: #6f486a;  /* Highlight color on hover */
+  color: white;
+  transform: scale(1.05);  /* Slight zoom on hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);  /* Subtle shadow on hover */
+}
+
+/* Selected state for interests */
+.interest-item.selected {
+  background-color: #6f486a;  /* Selected background */
+  color: #ffffff;  /* White text when selected */
+  border-color: #6f486a;  /* Show border to highlight selection */
+}
+
+/* Style the submit button */
+.submit-btn {
+  font-family: 'Inter', sans-serif;  /* Use modern font */
+  font-size: 1.5rem;
+  padding: 0.75rem 2rem;
+  background-color: #6f486a;  /* Button color */
+  border: none;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+}
+
+.submit-btn:hover {
+  background-color: #c70039;  /* Change color on hover */
+  transform: scale(1.05);  /* Slight zoom on hover */
+}
+
+/* Disabled submit button */
+.submit-btn:disabled {
+  background-color: #92999a;  /* Disabled color */
+  color: #000000;  /* Darker text for contrast */
+  cursor: not-allowed;
+}
+
+/* Scrollbar styling for the interest list */
+.interest-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.interest-list::-webkit-scrollbar-thumb {
+  background-color: #6f486a;  /* Matching scrollbar with theme */
+  border-radius: 5px;
+}
+
+.interest-list::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;  /* Smaller heading */
+  }
+
+  .interest-item {
+    font-size: 1rem;  /* Smaller font for interests */
+    padding: 12px;
+  }
+
+  .submit-btn {
+    font-size: 1.25rem;  /* Adjust button font size */
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2rem;  /* Smaller heading on mobile */
+  }
+
+  .submit-btn {
+    font-size: 1rem;  /* Smaller button on mobile */
+    padding: 0.5rem 1.5rem;
+  }
+}
